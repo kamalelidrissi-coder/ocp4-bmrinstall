@@ -217,8 +217,8 @@
    Apply configuration
 
    ```bash
-   \cp ~/ocp4-metal-install/dns/named.conf /etc/named.conf
-   cp -R ~/ocp4-metal-install/dns/zones /etc/named/
+   \cp ~/ocp4-bmrinstall/dns/named.conf /etc/named.conf
+   cp -R ~/ocp4-bmrinstall/dns/zones /etc/named/
    ```
 
    Configure the firewall for DNS
@@ -240,10 +240,10 @@
 
    > At the moment DNS will still be pointing to the LAN DNS server. You can see this by testing with `dig ocp.lan`.
 
-   Change the LAN nic (ens192) to use 127.0.0.1 for DNS AND ensure `Ignore automatically Obtained DNS parameters` is ticked
+   Change the LAN nic (ens37) to use 127.0.0.1 for DNS AND ensure `Ignore automatically Obtained DNS parameters` is ticked
 
    ```bash
-   nmtui-edit ens192
+   nmtui-edit ens37
    ```
 
    Restart Network Manager
@@ -271,7 +271,7 @@
    Edit dhcpd.conf from the cloned git repo to have the correct mac address for each host and copy the conf file to the correct location for the DHCP service to use
 
    ```bash
-   \cp ~/ocp4-metal-install/dhcpd.conf /etc/dhcp/dhcpd.conf
+   \cp ~/ocp4-bmrinstall/dhcpd.conf /etc/dhcp/dhcpd.conf
    ```
 
    Configure the Firewall
@@ -335,7 +335,7 @@
    Copy HAProxy config
 
    ```bash
-   \cp ~/ocp4-metal-install/haproxy.cfg /etc/haproxy/haproxy.cfg
+   \cp ~/ocp4-bmrinstall/haproxy.cfg /etc/haproxy/haproxy.cfg
    ```
 
    Configure the Firewall
